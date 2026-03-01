@@ -220,6 +220,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── HOW IT WORKS ─────────────────────────────────────────────────── */}
+      <section className="border-b-4 border-black bg-[oklch(0.08_0_0)] text-white">
+        <div className="container py-16 md:py-24">
+          <div className="mb-12">
+            <p className="text-[oklch(0.82_0.18_85)] text-xs font-bold uppercase tracking-[0.3em] mb-3">
+              [ How It Works ]
+            </p>
+            <h2
+              className="font-black uppercase leading-none text-white"
+              style={{
+                fontSize: "clamp(2rem, 5vw, 4rem)",
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Three steps.<br />
+              <span className="text-[oklch(0.82_0.18_85)]">That's it.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-0 border-t-4 border-l-4 border-white/20">
+            {[
+              {
+                step: "01",
+                title: "Unfold",
+                desc: "Flip the two side panels upright and lock them into position. Takes under 10 seconds — no tools required.",
+              },
+              {
+                step: "02",
+                title: "Load Drum",
+                desc: "Slide your cable drum onto the central spindle between the two panels. The adjustable spindle fits drums from 300 mm to 750 mm.",
+              },
+              {
+                step: "03",
+                title: "Pull Cable",
+                desc: "The drum spins freely on precision bearings. Walk the cable out — no kinks, no drag, no one holding the reel.",
+              },
+            ].map(({ step, title, desc }) => (
+              <div
+                key={step}
+                className="border-r-4 border-b-4 border-white/20 p-8 md:p-10 flex flex-col gap-4"
+              >
+                <span
+                  className="font-black text-[oklch(0.82_0.18_85)] leading-none"
+                  style={{ fontSize: "clamp(3rem, 6vw, 5rem)", letterSpacing: "-0.05em" }}
+                >
+                  {step}
+                </span>
+                <h3
+                  className="font-black uppercase text-white"
+                  style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", letterSpacing: "-0.03em" }}
+                >
+                  {title}
+                </h3>
+                <div className="w-12 h-1 bg-[oklch(0.82_0.18_85)]" />
+                <p className="text-white/70 font-semibold uppercase text-sm leading-relaxed">
+                  {desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── DETAIL / SPECS ──────────────────────────────────────────────────── */}
       <section className="border-b-4 border-black">
         <div className="container grid md:grid-cols-5 gap-0">
