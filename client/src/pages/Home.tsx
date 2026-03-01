@@ -411,6 +411,87 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── KEY BENEFITS ───────────────────────────────────────────────────── */}
+      <section className="border-b-4 border-black bg-white">
+        <div className="container py-16 md:py-24">
+          <div className="mb-12">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[oklch(0.45_0_0)] mb-3">
+              [ Built for the Way You Work ]
+            </p>
+            <h2
+              className="font-black uppercase leading-none"
+              style={{
+                fontSize: "clamp(2.2rem, 6vw, 4.5rem)",
+                letterSpacing: "-0.04em",
+              }}
+            >
+              WHY TRADIES<br />
+              <span className="text-[oklch(0.82_0.18_85)]">CHOOSE IT.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-0 border-t-4 border-l-4 border-black">
+            {[
+              {
+                number: "01",
+                title: "No More Tangled Cable",
+                body: "Cable drums left on the ground roll, tip, and tangle. The Briefcase holds the drum elevated and centred on a free-spinning axle, so cable feeds off cleanly under tension every time — no kinks, no knots, no wasted time.",
+              },
+              {
+                number: "02",
+                title: "Faster Pull-Throughs",
+                body: "When the drum spins freely on sealed bearings, you pull cable at your pace — not the drum's. Less resistance means fewer trips back to the reel, and your apprentice can feed while you pull without fighting the weight.",
+              },
+              {
+                number: "03",
+                title: "Works With What's On Site",
+                body: "No proprietary axle to lose or forget. Drop in a standard steel rod or grab a length of 50 mm conduit already on the job. The snap-in bearing cradles grip it securely and let it spin freely under full drum load.",
+              },
+              {
+                number: "04",
+                title: "Fits in the Back of the Ute",
+                body: "The two HDPE panels separate and snap flat together via four 25 mm neodymium magnets per side. Slide it behind the seat, stand it in the tray, or stack it with your other gear. It takes up less space than a toolbox lid.",
+              },
+              {
+                number: "05",
+                title: "Tough Enough for Site",
+                body: "Injection-moulded HDPE doesn't rust, crack in the cold, or warp in the heat. The rubber levelling feet keep it stable on uneven slabs, gravel, and timber decking. Rated to 150 kg — it handles the heaviest commercial drums.",
+              },
+              {
+                number: "06",
+                title: "Safer for Your Back",
+                body: "Lifting and rolling heavy cable drums is a leading cause of tradesman injury. The Briefcase eliminates the need to manhandle the drum — set it up once, pull from a standing position, and move on to the next run.",
+              },
+            ].map((benefit) => (
+              <div
+                key={benefit.number}
+                className="border-r-4 border-b-4 border-black p-7 md:p-9 group hover:bg-[oklch(0.97_0_0)] transition-colors"
+              >
+                <div className="flex items-start gap-5">
+                  <span
+                    className="font-black text-[oklch(0.82_0.18_85)] leading-none flex-shrink-0"
+                    style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.06em" }}
+                  >
+                    {benefit.number}
+                  </span>
+                  <div>
+                    <h3
+                      className="font-black uppercase mb-3"
+                      style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)", letterSpacing: "-0.02em" }}
+                    >
+                      {benefit.title}
+                    </h3>
+                    <p className="text-sm font-semibold uppercase text-[oklch(0.35_0_0)] leading-relaxed">
+                      {benefit.body}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── TESTIMONIAL ──────────────────────────────────────────────────────── */}
       <section className="border-b-4 border-black bg-[oklch(0.97_0_0)]">
         <div className="container py-16 md:py-24">
