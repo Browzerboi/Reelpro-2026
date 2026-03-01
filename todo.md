@@ -35,3 +35,6 @@
 - [x] Regenerate hero, product, and detail images based on prototype two-piece cradle design in black & yellow
 - [x] Add "How It Works" section with three steps: Unfold, Load drum, Pull cable
 - [x] Add customer testimonial section with quote from John, licensed electrician
+- [x] Regenerate images with correct assembly: two upright side panels, drum axle rests on top bearing cradles (not through the centre)
+- [x] Update product descriptions, features, and How It Works copy to reflect correct assembly (axle rests on top of upright panels, rolls on top-mounted bearings)
+- [x] Add 4x 25mm magnets per side feature to product copy, features grid, and How It Works (fold/carry step)

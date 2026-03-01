@@ -2,42 +2,42 @@ import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Shield, Zap, Package } from "lucide-react";
 
 const HERO_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/hero_v2-e6HX5fNLSnR3qcagRAHsvq.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/hero_v4-Zatx7GkNNGezy6acTx5JEv.webp";
 const PRODUCT_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/product_hero_v2-FttRWYQzAnSZxQBgTzwe55.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/product_v4-oR77qHtvVZRMQHnpfMjjNx.webp";
 const DETAIL_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/feature_detail_v2-V8K9Xx4SKxLgvqwFtgFTzb.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/detail_v4-ZTKaEqXbZGkDtMoCwB7PSp.webp";
 
 const features = [
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Built for the Trade",
-    desc: "Heavy-gauge powder-coated steel frame rated for cable drums up to 150 kg. Designed with input from working electricians.",
+    desc: "Heavy-duty powder-coated steel panels rated for cable drums up to 150 kg. Designed by electricians, for electricians.",
   },
   {
     icon: <Zap className="w-6 h-6" />,
     title: "Zero-Drag Spin",
-    desc: "Precision bearing spindle lets the drum rotate freely under load — no more kinks, no more fighting the reel.",
+    desc: "The drum axle rests on sealed precision roller bearings at the top of each panel. The drum spins freely under full load — no kinks, no fighting the reel.",
   },
   {
     icon: <Package className="w-6 h-6" />,
     title: "Folds Flat in Seconds",
-    desc: "Collapses to briefcase dimensions in under 10 seconds. Fits in the back of a ute, van, or site container.",
+    desc: "The two panels separate and stack flat for transport. Four 25 mm magnets on each panel snap them together securely — no straps, no clips, no fuss.",
   },
   {
     icon: <CheckCircle2 className="w-6 h-6" />,
     title: "Universal Drum Fit",
-    desc: "Adjustable spindle accommodates standard drum flange sizes from 300 mm to 750 mm diameter.",
+    desc: "The axle cradle accommodates standard cable drum flange sizes. Drop the drum in from the top — no threading, no assembly.",
   },
 ];
 
 const specs = [
   ["Max load capacity", "150 kg"],
   ["Compatible drum diameter", "300 – 750 mm"],
-  ["Frame material", "Structural steel, powder-coated"],
-  ["Spindle bearing", "Sealed precision roller bearing"],
-  ["Folded dimensions", "700 × 400 × 80 mm"],
-  ["Weight", "8.5 kg"],
+  ["Panel material", "Structural steel, powder-coated matte black"],
+  ["Bearing type", "Sealed precision roller bearing"],
+  ["Magnets per panel", "4 × 25 mm neodymium"],
+  ["Feet", "Yellow rubber levelling feet"],
   ["Finish", "Matte black / trade yellow accents"],
   ["Warranty", "2 years — parts & labour"],
 ];
@@ -98,7 +98,7 @@ export default function Home() {
 
             <p className="text-white/90 text-xl md:text-2xl font-semibold uppercase tracking-wide max-w-xl mb-10">
               The cable reel stand built for electrical trades.
-              Safe. Fast. Folds flat.
+              Drop the drum in. Pull cable. Pack flat.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -148,9 +148,9 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-lg font-semibold uppercase text-[oklch(0.35_0_0)] leading-relaxed mb-8">
-              The Briefcase holds your cable drum off the ground, lets it spin freely,
-              and folds flat when you're done. No more rolling drums down hallways.
-              No more cable kinks. No more wasted time.
+              Two solid steel panels. Drop your drum axle into the top bearing cradles.
+              Pull cable freely with zero drag. When the job's done, the panels snap
+              together magnetically and pack flat — no tools, no straps, no wasted time.
             </p>
             <div className="border-t-4 border-black pt-6 flex items-center justify-between">
               <div>
@@ -244,17 +244,17 @@ export default function Home() {
               {
                 step: "01",
                 title: "Unfold",
-                desc: "Flip the two side panels upright and lock them into position. Takes under 10 seconds — no tools required.",
+                desc: "Pull the two panels apart — they separate instantly. Stand them upright, parallel to each other. Four rubber feet on each panel keep them stable on any surface. No tools. No assembly.",
               },
               {
                 step: "02",
                 title: "Load Drum",
-                desc: "Slide your cable drum onto the central spindle between the two panels. The adjustable spindle fits drums from 300 mm to 750 mm.",
+                desc: "Lift your cable drum and drop the axle down into the open bearing cradles at the top of each panel. The drum sits between the two panels, elevated off the ground, ready to spin.",
               },
               {
                 step: "03",
                 title: "Pull Cable",
-                desc: "The drum spins freely on precision bearings. Walk the cable out — no kinks, no drag, no one holding the reel.",
+                desc: "Walk the cable out. The drum rotates freely on sealed precision bearings — zero drag, zero kinks. When you're done, lift the drum out, bring the panels together and the 4 × 25 mm magnets on each side snap them flat for easy carry and storage.",
               },
             ].map(({ step, title, desc }) => (
               <div
@@ -324,7 +324,7 @@ export default function Home() {
           <div className="md:col-span-2">
             <img
               src={DETAIL_IMG}
-              alt="Briefcase spindle detail"
+              alt="Briefcase bearing cradle detail"
               className="w-full h-full object-cover min-h-[300px]"
             />
           </div>
@@ -347,8 +347,8 @@ export default function Home() {
               }}
             >
               &ldquo;I've been pulling cable for 15 years and this thing has already
-              saved me hours on site. Folds flat, sets up in seconds, and the drum
-              spins like it's on ice. Should've existed years ago.&rdquo;
+              saved me hours on site. Drop the drum in, pull cable, snap it shut and
+              carry it out. Should've existed years ago.&rdquo;
             </blockquote>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-black flex items-center justify-center flex-shrink-0">
