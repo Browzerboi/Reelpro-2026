@@ -1,23 +1,52 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Shield, Zap, Package } from "lucide-react";
+import { useState } from "react";
 
 const HERO_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/hero_v5-kY4WcSZNczYowBFdV6F5Fz.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/hero_v19_9b3318aa.png";
 const PRODUCT_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/product_v5-JyncS8zPkScrcCmvpmko4U.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/angle_front_8873d1fd.jpg";
 const DETAIL_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/detail_v5-U7tYuHXeqUan3YEcEXomCp.webp";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/tradesman_pull_cb513d3f.jpg";
+
+const GALLERY_IMAGES = [
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/hero_v19_9b3318aa.png",
+    alt: "The Briefcase — assembled on a job site",
+    label: "Assembled",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/angle_front_8873d1fd.jpg",
+    alt: "The Briefcase — front angle",
+    label: "Front View",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/angle_rear_e09683ec.jpg",
+    alt: "The Briefcase — rear angle",
+    label: "Rear View",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/tradesman_pull_cb513d3f.jpg",
+    alt: "Tradesman pulling cable from The Briefcase",
+    label: "In Use",
+  },
+  {
+    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/tradesman_load_bb5727d4.jpg",
+    alt: "Tradesman loading drum onto The Briefcase",
+    label: "Loading",
+  },
+];
 
 const features = [
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Built for the Trade",
-    desc: "Heavy-duty powder-coated steel panels rated for cable drums up to 150 kg. Designed by electricians, for electricians.",
+    desc: "Injection-moulded HDPE panels — tough, lightweight, and weatherproof. Rated for cable drums up to 150 kg. Designed by electricians, for electricians.",
   },
   {
     icon: <Zap className="w-6 h-6" />,
     title: "Zero-Drag Spin",
-    desc: "The drum axle rests on sealed precision roller bearings at the top of each panel. The drum spins freely under full load — no kinks, no fighting the reel.",
+    desc: "Drop a steel axle or a 50 mm conduit from the job site straight into the open-top bearing cradles. The drum spins freely under full load — no kinks, no fighting the reel.",
   },
   {
     icon: <Package className="w-6 h-6" />,
@@ -27,20 +56,68 @@ const features = [
   {
     icon: <CheckCircle2 className="w-6 h-6" />,
     title: "Universal Drum Fit",
-    desc: "The axle cradle accommodates standard cable drum flange sizes. Drop the drum in from the top — no threading, no assembly.",
+    desc: "The open-top bearing cradles accept a standard steel axle or any 50 mm conduit you already have on site. Drop the drum in from the top — no threading, no assembly.",
   },
 ];
 
 const specs = [
   ["Max load capacity", "150 kg"],
   ["Compatible drum diameter", "300 – 750 mm"],
-  ["Panel material", "Structural steel, powder-coated matte black"],
-  ["Bearing type", "Sealed precision roller bearing"],
+  ["Axle / shaft", "Steel axle or 50 mm conduit (site-supplied)"],
+  ["Panel material", "Injection-moulded HDPE — lightweight & weatherproof"],
+  ["Bearing type", "Open-top sealed roller bearing cradle"],
   ["Magnets per panel", "4 × 25 mm neodymium"],
   ["Feet", "Yellow rubber levelling feet"],
   ["Finish", "Matte black / trade yellow accents"],
   ["Warranty", "2 years — parts & labour"],
 ];
+
+function GallerySection() {
+  const [active, setActive] = useState(0);
+  return (
+    <section className="border-b-4 border-black bg-[oklch(0.06_0_0)]">      
+      <div className="container py-10 md:py-14">
+        <p className="text-[oklch(0.82_0.18_85)] text-xs font-bold uppercase tracking-[0.3em] mb-6">
+          [ Product Gallery ]
+        </p>
+        {/* Main image */}
+        <div className="relative border-4 border-white/10 overflow-hidden mb-4" style={{ aspectRatio: '16/9' }}>
+          <img
+            src={GALLERY_IMAGES[active].src}
+            alt={GALLERY_IMAGES[active].alt}
+            className="w-full h-full object-cover transition-all duration-300"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-black/60 px-6 py-3">
+            <span className="text-white font-black uppercase tracking-widest text-sm">
+              {GALLERY_IMAGES[active].label}
+            </span>
+          </div>
+        </div>
+        {/* Thumbnails */}
+        <div className="grid grid-cols-5 gap-2">
+          {GALLERY_IMAGES.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`relative overflow-hidden border-4 transition-all ${
+                active === i
+                  ? "border-[oklch(0.82_0.18_85)]"
+                  : "border-transparent opacity-50 hover:opacity-80"
+              }`}
+              style={{ aspectRatio: '4/3' }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -118,6 +195,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── IMAGE GALLERY ───────────────────────────────────────────────────── */}
+      <GallerySection />
+
       {/* ── PRODUCT INTRO ───────────────────────────────────────────────────── */}
       <section id="product" className="border-b-4 border-black">
         <div className="container grid md:grid-cols-2 gap-0">
@@ -148,7 +228,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-lg font-semibold uppercase text-[oklch(0.35_0_0)] leading-relaxed mb-8">
-              Two solid steel panels. Drop your drum axle into the top bearing cradles.
+              Two injection-moulded HDPE panels — tough, light, and weatherproof. Drop a steel axle or a 50 mm conduit from the job site into the open-top bearing cradles.
               Pull cable freely with zero drag. When the job's done, the panels snap
               together magnetically and pack flat — no tools, no straps, no wasted time.
             </p>
@@ -244,17 +324,17 @@ export default function Home() {
               {
                 step: "01",
                 title: "Unfold",
-                desc: "Pull the two panels apart — they separate instantly. Stand them upright, parallel to each other. Four rubber feet on each panel keep them stable on any surface. No tools. No assembly.",
+                desc: "Pull the two HDPE panels apart — they separate instantly. Stand them upright, parallel to each other. Four rubber feet on each panel keep them stable on any surface. No tools. No assembly.",
               },
               {
                 step: "02",
                 title: "Load Drum",
-                desc: "Lift your cable drum and drop the axle down into the open bearing cradles at the top of each panel. The drum sits between the two panels, elevated off the ground, ready to spin.",
+                desc: "Slide a steel axle — or grab a length of 50 mm conduit from the job site — through the cable drum and drop it straight down into the open-top bearing cradles. The drum sits elevated between the panels, ready to spin.",
               },
               {
                 step: "03",
                 title: "Pull Cable",
-                desc: "Walk the cable out. The drum rotates freely on sealed precision bearings — zero drag, zero kinks. When you're done, lift the drum out, bring the panels together and the 4 × 25 mm magnets on each side snap them flat for easy carry and storage.",
+                desc: "Walk the cable out. The drum rotates freely on sealed precision bearings — zero drag, zero kinks. When you're done, lift the drum out, bring the panels together and the 4 × 25 mm neodymium magnets on each side snap them flat for easy carry and storage.",
               },
             ].map(({ step, title, desc }) => (
               <div
