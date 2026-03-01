@@ -1,4 +1,4 @@
-# CableCo — The Briefcase TODO
+# Reel-Pro — The Briefcase TODO
 
 ## Setup
 - [x] Project scaffold initialised (React + tRPC + DB)
@@ -48,3 +48,4 @@
 - [x] Regenerate images: final v19 hero with recessed bearings, rounded handles, yellow H-beams, shaft and spool
 - [x] Generate 4 additional product images: front angle, rear angle, tradesman pulling cable, tradesman loading drum
 - [x] Upload all final images to CDN and update site with image gallery/carousel
+- [x] Audit and update all branding references to Reel-Pro: HTML title, meta description, OG tags, products.ts comment, todo.md header

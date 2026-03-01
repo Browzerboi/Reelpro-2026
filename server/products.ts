@@ -1,5 +1,5 @@
 /**
- * CableCo product catalogue.
+ * Reel-Pro product catalogue.
  * Single product: The Briefcase cable stand.
  */
 export const BRIEFCASE = {
