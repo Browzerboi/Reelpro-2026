@@ -34,3 +34,4 @@
 - [x] Increase checkout form field label font size for better readability
 - [x] Regenerate hero, product, and detail images based on prototype two-piece cradle design in black & yellow
 - [x] Add "How It Works" section with three steps: Unfold, Load drum, Pull cable
+- [x] Add customer testimonial section with quote from John, licensed electrician

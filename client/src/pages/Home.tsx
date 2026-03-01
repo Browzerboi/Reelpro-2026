@@ -331,6 +331,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── TESTIMONIAL ──────────────────────────────────────────────────────── */}
+      <section className="border-b-4 border-black bg-[oklch(0.97_0_0)]">
+        <div className="container py-16 md:py-24">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[oklch(0.45_0_0)] mb-10">
+            [ From the Trade ]
+          </p>
+          <div className="border-l-8 border-[oklch(0.82_0.18_85)] pl-8 md:pl-12 max-w-4xl">
+            <blockquote
+              className="font-black uppercase leading-tight text-[oklch(0.08_0_0)] mb-8"
+              style={{
+                fontSize: "clamp(1.6rem, 4vw, 3rem)",
+                letterSpacing: "-0.03em",
+                lineHeight: 1.05,
+              }}
+            >
+              &ldquo;I've been pulling cable for 15 years and this thing has already
+              saved me hours on site. Folds flat, sets up in seconds, and the drum
+              spins like it's on ice. Should've existed years ago.&rdquo;
+            </blockquote>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-black flex items-center justify-center flex-shrink-0">
+                <span className="text-[oklch(0.82_0.18_85)] font-black text-xl">J</span>
+              </div>
+              <div>
+                <p className="font-black uppercase text-lg" style={{ letterSpacing: "-0.02em" }}>
+                  John
+                </p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[oklch(0.45_0_0)]">
+                  Licensed Electrician — 15 years on the tools
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA BANNER ──────────────────────────────────────────────────────── */}
       <section className="bg-black text-white border-b-4 border-black">
         <div className="container py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-8">
