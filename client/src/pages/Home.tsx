@@ -2,11 +2,11 @@ import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Shield, Zap, Package } from "lucide-react";
 
 const HERO_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/hero_ba5c5c1a.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/hero_v2-e6HX5fNLSnR3qcagRAHsvq.webp";
 const PRODUCT_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/product_hero_d2fd42a9.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/product_hero_v2-FttRWYQzAnSZxQBgTzwe55.webp";
 const DETAIL_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/feature_detail_6542c00f.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/feature_detail_v2-V8K9Xx4SKxLgvqwFtgFTzb.webp";
 
 const features = [
   {

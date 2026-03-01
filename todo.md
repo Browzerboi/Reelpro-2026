@@ -32,3 +32,4 @@
 ## Changes
 - [x] Rename company from "CableCo" to "Reel-Pro" across all pages, components, and backend files
 - [x] Increase checkout form field label font size for better readability
+- [x] Regenerate hero, product, and detail images based on prototype two-piece cradle design in black & yellow
