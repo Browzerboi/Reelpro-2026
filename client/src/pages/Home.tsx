@@ -492,6 +492,115 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── ENVIRONMENTS SHOWCASE ─────────────────────────────────────────── */}
+      <section className="border-b-4 border-black bg-black text-white">
+        <div className="container py-16 md:py-24">
+          <div className="mb-12">
+            <p className="text-[oklch(0.82_0.18_85)] text-xs font-bold uppercase tracking-[0.3em] mb-3">
+              [ Built for Every Site ]
+            </p>
+            <h2
+              className="font-black uppercase leading-none text-white"
+              style={{
+                fontSize: "clamp(2.2rem, 6vw, 4.5rem)",
+                letterSpacing: "-0.04em",
+              }}
+            >
+              WHEREVER THE<br />
+              <span className="text-[oklch(0.82_0.18_85)]">JOB TAKES YOU.</span>
+            </h2>
+            <p className="text-white/60 font-semibold uppercase text-sm tracking-wide mt-5 max-w-2xl">
+              From high-rise commercial fit-outs to residential new builds, industrial plants, and underground car parks — The Briefcase performs wherever cable needs to run.
+            </p>
+          </div>
+
+          {/* Large feature image + 3 smaller grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-4 border-white/10">
+            {/* Feature: Commercial */}
+            <div className="relative overflow-hidden group border-b-4 md:border-b-0 md:border-r-4 border-white/10" style={{ minHeight: '420px' }}>
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/env_commercial-ajMyHuR4aVBc7QRs5ixafs.webp"
+                alt="The Briefcase in a commercial building under construction"
+                className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-6 md:p-8">
+                <p className="text-[oklch(0.82_0.18_85)] text-xs font-bold uppercase tracking-[0.3em] mb-1">[ 01 ]</p>
+                <h3
+                  className="font-black uppercase text-white leading-none"
+                  style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', letterSpacing: '-0.03em' }}
+                >
+                  COMMERCIAL<br />FIT-OUTS
+                </h3>
+                <p className="text-white/70 text-xs font-bold uppercase tracking-wide mt-2">
+                  Multi-storey offices, retail, and high-rise builds
+                </p>
+              </div>
+            </div>
+
+            {/* Right column: 3 stacked */}
+            <div className="grid grid-rows-3 gap-0">
+              {/* Residential */}
+              <div className="relative overflow-hidden group border-b-4 border-white/10" style={{ minHeight: '180px' }}>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/env_residential-3h6ZoZ4vqpWpzqVFWchbFZ.webp"
+                  alt="The Briefcase in a residential new build"
+                  className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <p className="text-[oklch(0.82_0.18_85)] text-xs font-bold uppercase tracking-[0.3em] mb-1">[ 02 ]</p>
+                  <h3
+                    className="font-black uppercase text-white leading-none"
+                    style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', letterSpacing: '-0.03em' }}
+                  >
+                    RESIDENTIAL<br />NEW BUILDS
+                  </h3>
+                </div>
+              </div>
+
+              {/* Industrial */}
+              <div className="relative overflow-hidden group border-b-4 border-white/10" style={{ minHeight: '180px' }}>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/env_industrial-EL2HfdGzd6eo8hN89CEJMY.webp"
+                  alt="The Briefcase in an industrial warehouse"
+                  className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <p className="text-[oklch(0.82_0.18_85)] text-xs font-bold uppercase tracking-[0.3em] mb-1">[ 03 ]</p>
+                  <h3
+                    className="font-black uppercase text-white leading-none"
+                    style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', letterSpacing: '-0.03em' }}
+                  >
+                    INDUSTRIAL<br />WAREHOUSES
+                  </h3>
+                </div>
+              </div>
+
+              {/* Underground */}
+              <div className="relative overflow-hidden group" style={{ minHeight: '180px' }}>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/env_underground-4qV5tGbYixEXU3Sh9oGvFW.webp"
+                  alt="The Briefcase in an underground car park"
+                  className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <p className="text-[oklch(0.82_0.18_85)] text-xs font-bold uppercase tracking-[0.3em] mb-1">[ 04 ]</p>
+                  <h3
+                    className="font-black uppercase text-white leading-none"
+                    style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', letterSpacing: '-0.03em' }}
+                  >
+                    UNDERGROUND<br />& BASEMENT
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── TESTIMONIAL ──────────────────────────────────────────────────────── */}
       <section className="border-b-4 border-black bg-[oklch(0.97_0_0)]">
         <div className="container py-16 md:py-24">

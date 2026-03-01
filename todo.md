@@ -50,3 +50,5 @@
 - [x] Upload all final images to CDN and update site with image gallery/carousel
 - [x] Audit and update all branding references to Reel-Pro: HTML title, meta description, OG tags, products.ts comment, todo.md header
 - [x] Add key benefits section for tradesmen explaining why The Briefcase improves their workflow
+- [x] Generate 4 real-world environment images: commercial building, residential new build, industrial warehouse, underground/basement
+- [x] Build real-world environments showcase section on homepage
