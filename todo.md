@@ -38,3 +38,6 @@
 - [x] Regenerate images with correct assembly: two upright side panels, drum axle rests on top bearing cradles (not through the centre)
 - [x] Update product descriptions, features, and How It Works copy to reflect correct assembly (axle rests on top of upright panels, rolls on top-mounted bearings)
 - [x] Add 4x 25mm magnets per side feature to product copy, features grid, and How It Works (fold/carry step)
+- [x] Increase font size of text below "Proceed to Payment" button on checkout page
+- [x] Increase font size of grey text in Order Summary section on checkout page
+- [x] Revert hero image to v2-style (rugged job-site render) with "THE BRIEFCASE" and "REEL-PRO" branding on the panel sides

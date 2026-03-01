@@ -5,7 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 
 const PRODUCT_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/product_hero_d2fd42a9.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663392186847/EDzFxEe3hncyPXxwjhxxMi/product_v5-JyncS8zPkScrcCmvpmko4U.webp";
 
 const AU_STATES = ["ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"];
 
@@ -332,7 +332,7 @@ export default function Checkout() {
                 </>
               )}
             </button>
-            <p className="text-xs font-bold uppercase tracking-wide text-[oklch(0.55_0_0)] text-center">
+            <p className="text-sm font-bold uppercase tracking-wide text-[oklch(0.55_0_0)] text-center">
               You will be redirected to Stripe's secure checkout to complete payment.
             </p>
           </form>
@@ -364,11 +364,11 @@ export default function Checkout() {
                   <span>The Briefcase × 1</span>
                   <span>$499.00</span>
                 </div>
-                <div className="flex justify-between text-sm font-bold uppercase tracking-wide text-[oklch(0.45_0_0)]">
+                <div className="flex justify-between text-base font-bold uppercase tracking-wide text-[oklch(0.45_0_0)]">
                   <span>Shipping</span>
                   <span>Free</span>
                 </div>
-                <div className="flex justify-between text-sm font-bold uppercase tracking-wide text-[oklch(0.45_0_0)]">
+                <div className="flex justify-between text-base font-bold uppercase tracking-wide text-[oklch(0.45_0_0)]">
                   <span>GST included</span>
                   <span>$45.36</span>
                 </div>
@@ -383,7 +383,7 @@ export default function Checkout() {
                 </span>
               </div>
               <div className="px-5 pb-5">
-                <p className="text-xs font-bold uppercase tracking-wide text-[oklch(0.55_0_0)] border-t-2 border-black/20 pt-4">
+                <p className="text-sm font-bold uppercase tracking-wide text-[oklch(0.55_0_0)] border-t-2 border-black/20 pt-4">
                   Free shipping Australia-wide. 2-year warranty. Ships within 5–7 business days.
                 </p>
               </div>
