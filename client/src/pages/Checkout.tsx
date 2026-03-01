@@ -50,7 +50,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-xs font-black uppercase tracking-widest text-[oklch(0.08_0_0)]">
+      <label className="text-base font-black uppercase tracking-widest text-[oklch(0.08_0_0)]">
         {label}
         {required && <span className="text-[oklch(0.82_0.18_85)] ml-1">*</span>}
       </label>
