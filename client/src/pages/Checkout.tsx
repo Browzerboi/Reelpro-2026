@@ -124,8 +124,8 @@ export default function Checkout() {
         <div className="container flex items-center justify-between py-4">
           <Link href="/">
             <span
-              className="text-2xl font-black tracking-tighter uppercase cursor-pointer"
-              style={{ letterSpacing: "-0.04em" }}
+              className="text-4xl font-black uppercase leading-none cursor-pointer"
+              style={{ letterSpacing: "-0.05em" }}
             >
               REEL<span className="text-[oklch(0.82_0.18_85)]">-PRO</span>
             </span>

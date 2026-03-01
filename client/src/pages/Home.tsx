@@ -52,8 +52,8 @@ export default function Home() {
       <nav className="border-b-4 border-black">
         <div className="container flex items-center justify-between py-4">
           <span
-            className="text-2xl font-black tracking-tighter uppercase"
-            style={{ letterSpacing: "-0.04em" }}
+            className="text-4xl font-black uppercase leading-none"
+            style={{ letterSpacing: "-0.05em" }}
           >
             REEL<span className="text-[oklch(0.82_0.18_85)]">-PRO</span>
           </span>

@@ -41,3 +41,4 @@
 - [x] Increase font size of text below "Proceed to Payment" button on checkout page
 - [x] Increase font size of grey text in Order Summary section on checkout page
 - [x] Revert hero image to v2-style (rugged job-site render) with "THE BRIEFCASE" and "REEL-PRO" branding on the panel sides
+- [x] Increase REEL-PRO nav logo size and visual weight on Home and Checkout pages
