@@ -9,8 +9,9 @@ import { createOrder, getOrderById, getOrderBySessionId } from "./orderDb";
 import { BRIEFCASE } from "./products";
 import { orders } from "../drizzle/schema";
 import { getDb } from "./db";
+import { ENV } from "./_core/env";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
+const stripe = new Stripe(ENV.stripeSecretKey || process.env.STRIPE_SECRET_KEY || "", {
   apiVersion: "2026-02-25.clover",
 });
 
@@ -49,23 +50,32 @@ export const appRouter = router({
           (ctx.req.headers.referer as string)?.replace(/\/$/, "") ||
           "http://localhost:3000";
 
-        const order = await createOrder({
-          customerName: input.customerName,
-          customerEmail: input.customerEmail,
-          customerPhone: input.customerPhone ?? null,
-          companyName: input.companyName ?? null,
-          abn: input.abn ?? null,
-          shippingLine1: input.shippingLine1,
-          shippingLine2: input.shippingLine2 ?? null,
-          shippingCity: input.shippingCity,
-          shippingState: input.shippingState,
-          shippingPostcode: input.shippingPostcode,
-          shippingCountry: input.shippingCountry,
-          productName: BRIEFCASE.name,
-          quantity: 1,
-          amountCents: BRIEFCASE.priceCents,
-          status: "pending",
-        });
+        // Attempt to create an order record in the DB.
+        // If the DB is unavailable (e.g. local dev without DATABASE_URL),
+        // we fall back to creating the Stripe session without an order ID.
+        let orderId: number | null = null;
+        try {
+          const order = await createOrder({
+            customerName: input.customerName,
+            customerEmail: input.customerEmail,
+            customerPhone: input.customerPhone ?? null,
+            companyName: input.companyName ?? null,
+            abn: input.abn ?? null,
+            shippingLine1: input.shippingLine1,
+            shippingLine2: input.shippingLine2 ?? null,
+            shippingCity: input.shippingCity,
+            shippingState: input.shippingState,
+            shippingPostcode: input.shippingPostcode,
+            shippingCountry: input.shippingCountry,
+            productName: BRIEFCASE.name,
+            quantity: 1,
+            amountCents: BRIEFCASE.priceCents,
+            status: "pending",
+          });
+          orderId = order.id;
+        } catch (err) {
+          console.warn("[Orders] DB unavailable — proceeding without order record:", (err as Error).message);
+        }
 
         const session = await stripe.checkout.sessions.create({
           payment_method_types: ["card"],
@@ -85,9 +95,9 @@ export const appRouter = router({
           ],
           mode: "payment",
           customer_email: input.customerEmail,
-          client_reference_id: order.id.toString(),
+          ...(orderId !== null ? { client_reference_id: orderId.toString() } : {}),
           metadata: {
-            order_id: order.id.toString(),
+            ...(orderId !== null ? { order_id: orderId.toString() } : {}),
             customer_name: input.customerName,
             customer_email: input.customerEmail,
           },
@@ -96,15 +106,18 @@ export const appRouter = router({
           allow_promotion_codes: true,
         });
 
-        const db = await getDb();
-        if (db) {
-          await db
-            .update(orders)
-            .set({ stripeSessionId: session.id })
-            .where(eq(orders.id, order.id));
+        // Update the order with the Stripe session ID if we have a DB record
+        if (orderId !== null) {
+          const db = await getDb();
+          if (db) {
+            await db
+              .update(orders)
+              .set({ stripeSessionId: session.id })
+              .where(eq(orders.id, orderId));
+          }
         }
 
-        return { checkoutUrl: session.url, orderId: order.id };
+        return { checkoutUrl: session.url, orderId };
       }),
 
     getBySessionId: publicProcedure
